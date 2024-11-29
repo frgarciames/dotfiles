@@ -96,7 +96,7 @@ return {
     opts = {
       options = {
         -- globalstatus = false,
-        theme = "kanagawa",
+        theme = "cyberdream",
       },
     },
   },
@@ -104,18 +104,18 @@ return {
   -- filename
   {
     "b0o/incline.nvim",
-    dependencies = { "rebelot/kanagawa.nvim" },
+    dependencies = { "scottmckendry/cyberdream.nvim" },
     event = "BufReadPre",
     priority = 1200,
     config = function()
-      local colors = require("kanagawa.colors").setup()
+      local colors = require("cyberdream.colors")
       require("incline").setup({
-        highlight = {
-          groups = {
-            InclineNormal = { guibg = colors.palette.dragonBlack2, guifg = colors.palette.oldWhite },
-            InclineNormalNC = { guifg = colors.palette.dragonBlack2, guibg = colors.palette.oldWhite },
-          },
-        },
+        -- highlight = {
+        --   groups = {
+        --     InclineNormal = { guibg = colors.default.palette.dragonBlack2, guifg = colors.palette.oldWhite },
+        --     InclineNormalNC = { guifg = colors.palette.dragonBlack2, guibg = colors.palette.oldWhite },
+        --   },
+        -- },
         window = { margin = { vertical = 0, horizontal = 1 } },
         hide = {
           cursorline = true,
